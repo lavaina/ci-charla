@@ -5,5 +5,5 @@ spacejam test-packages packages/common
 
 meteor deploy ci-lavaina
 
-cd tests
+cd $TRAVIS_BUILD_DIR/tests
 protractor conf.js --sauce

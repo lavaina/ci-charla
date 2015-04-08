@@ -3,5 +3,8 @@
   "version": "0.0.1",
   "devDependencies": {
     "selenium-webdriver": "^2.45.1"
+  },
+  "dependencies": {
+    "rc": "^1.0.1"
   }
 }

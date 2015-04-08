@@ -6,15 +6,20 @@ var driver = browser.driver;
 
 function Google(){
 
-  this.input = driver.findElement(By.name('q'));
-  this.searchBtn = driver.findElement(By.name('btnG'));
+  this.searchBox = driver.findElement(By.name('q'));
+  this.searchButton = driver.findElement(By.name('btnG'));
 
 }
 
 Google.prototype.search = function(text){
-  this.input.sendKeys(text);
-  this.searchBtn.click();
+  this.searchBox.sendKeys(text);
+  this.searchButton.click();
 };
+
+Google.prototype.getTitle = function(){
+  browser.getTitle();
+};
+
 
 Google.navigate = function(){
   driver.get('http://www.google.com/ncr');

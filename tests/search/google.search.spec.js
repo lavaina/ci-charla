@@ -1,24 +1,25 @@
+var Google = require("./pages/Google");
+// Get the webdriver
+var driver = browser.driver;
+
 describe('Google', function() {
 
-  // Get the webdriver
-  var driver = browser.driver;
+  var googlePage;
+
+  beforeEach(function(){
+    // Go to google.com
+    googlePage = Google.navigate();
+
+  });
 
   it('should search something', function() {
 
-    // Go to google.com
-    driver.get('http://www.google.com/ncr');
-
-    // get the elements of the page
-    var input = driver.findElement(By.name('q'));
-    var searchBtn = driver.findElement(By.name('btnG'));
-
-    input.sendKeys('webdriver');
-    // Click the search button
-    searchBtn.click();
+    googlePage.search('webdriver');
 
     // Wait for search results
     driver.sleep(1000);
 
-    expect(driver.getTitle()).toEqual('webdriver - Google Search');
+    expect(googlePage.getTitle()).toEqual('webdriver - Google Search');
   });
+
 });

@@ -1,0 +1,7 @@
+{
+  "name": "selenium",
+  "version": "0.0.1",
+  "devDependencies": {
+    "selenium-webdriver": "^2.45.1"
+  }
+}

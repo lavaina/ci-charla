@@ -5,13 +5,10 @@ node_js:
 before_install:
   - "curl https://install.meteor.com | /bin/sh"
   - export PATH=$HOME/.meteor:$PATH
-  - "npm install -g spacejam"
+  - npm install -g spacejam
 
-before_script:
-  - $TRAVIS_BUILD_DIR/bin/travis-meteor-login.sh
+before_script: $TRAVIS_BUILD_DIR/bin/travis-meteor-login.sh
 
-script:
-  - $TRAVIS_BUILD_DIR/travis-test.sh
+script: $TRAVIS_BUILD_DIR/bin/travis-test.sh
 
-after_success:
-  $TRAVIS_BUILD_DIR/bin/travis-meteor-deploy.sh
+after_success: $TRAVIS_BUILD_DIR/bin/travis-meteor-deploy.sh

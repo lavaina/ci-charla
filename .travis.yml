@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+  - "0.10.36"
+
+before_install:
+  - "curl https://install.meteor.com | /bin/sh"
+  - "npm install -g spacejam"
+
+before_script:
+  - $TRAVIS_BUILD_DIR/bin/travis-meteor-login.sh
+
+script:
+  - $TRAVIS_BUILD_DIR/travis-test.sh
+
+after_success:
+  $TRAVIS_BUILD_DIR/bin/travis-meteor-deploy.sh

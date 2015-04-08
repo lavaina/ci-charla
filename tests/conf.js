@@ -1,4 +1,4 @@
 // conf.js
 exports.config = {
-  specs: ['spec.js']
+  specs: ['search/*spec.js']
 }

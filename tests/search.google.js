@@ -14,13 +14,13 @@ var driver = new webdriver.Builder()
 driver.get('http://www.google.com/ncr');
 
 // get the elements of the page
-var input = driver.findElement(By.name('q'));
-var searchBtn = driver.findElement(By.name('btnG'));
+var searchBox = driver.findElement(By.name('q'));
+var searchButton = driver.findElement(By.name('btnG'));
 
 // Write 'webdriver' in the input
-input.sendKeys('webdriver');
+searchBox.sendKeys('webdriver');
 // Click the search button
-searchBtn.click();
+searchButton.click();
 
 driver.wait(until.titleIs('webdriver - Google Search'), 1000);
 

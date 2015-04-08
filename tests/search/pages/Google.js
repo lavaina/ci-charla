@@ -17,7 +17,7 @@ Google.prototype.search = function(text){
 };
 
 Google.prototype.getTitle = function(){
-  browser.getTitle();
+  return driver.getTitle();
 };
 
 
